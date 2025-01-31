@@ -19,14 +19,19 @@ nobel <- read_csv("data/nobel.csv")
 
 ### Exercise 1
 ```{r knowyourdata}
+dim(nobel)
+cat("Number of observations:", nrow(nobel), "\n")
+cat("Number of variables:", ncol(nobel), "\n")
 ##there are 935 observations of 26 variables in the dataset.
-##each row represents a person 
-
+##each row represents a Nobel Prize laureate 
 ```
 
 ### Exercise 2
-
-nobel_living<-%%
+```{r nobel-living}
+nobel_living <- nobel %>%
+  filter(!is.na(country) & gender != "org" & is.na(died_date))
+cat("Number of observations in nobel_living:", nrow(nobel_living))
+```
   
 
 ### Exercise 3
