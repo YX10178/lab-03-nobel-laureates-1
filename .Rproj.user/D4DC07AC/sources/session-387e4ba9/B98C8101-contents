@@ -26,7 +26,8 @@ nobel <- read_csv("data/nobel.csv")
 
 ### Exercise 2
 
-nobel_living<-%%
+nobel_living %>%
+
   
 
 ### Exercise 3
