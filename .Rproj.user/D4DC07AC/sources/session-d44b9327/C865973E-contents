@@ -27,28 +27,46 @@ cat("Number of variables:", ncol(nobel), "\n")
 ```
 
 ### Exercise 2
-```{r nobel-living}
+```{r nobel-living1}
 nobel_living <- nobel %>%
   filter(!is.na(country) & gender != "org" & is.na(died_date))
 cat("Number of observations in nobel_living:", nrow(nobel_living))
 ```
-  
 
 ### Exercise 3
 
-Remove this text, and add your answer for Exercise 1 here.
-Add code chunks as needed.
-Don't forget to label your code chunk.
-Do not use spaces in code chunk labels.
+```{r living Nobel laureates-US}
+#First, we’ll create a new variable to identify whether the laureate was in the US when they won their prize. 
+nobel_living<-nobel_living %>%
+  mutate (country_us = if_else (country == 'USA', "USA", "other"))
 
+# Next, we will limit our analysis to only the following categories: Physics, Medicine, Chemistry, and Economics.
+nobel_living_science <- nobel_living %>%
+  filter(category %in% c("Physics", "Medicine", "Chemistry", "Economics"))
+```
+
+```{r category-US}
+#Create a faceted bar plot visualizing the relationship between the category of prize and whether the laureate was in the US when they won the nobel prize.
+ggplot (nobel_living_science, aes (x = country_us)) +
+          facet_wrap(~category)+ # Facet by prize category
+          geom_bar()+
+          coord_flip() # Flip the coordinates to make the bars horizontal
+
+#Economics shows a significant concentration of laureates in the US. Chemistry shows a more balanced distribution between laureates in the US and other countries
+```
 ### Exercise 4
+```{r US-based-born in other countries}
 
-...
+```
 
 ### Exercise 5
 
-...
+```{r US-based-born in other countries2}
+
+```
 
 ### Exercise 6
 
-...
+```{r immigrant Nobelists}
+
+```

@@ -1,0 +1,7 @@
+"0","#First, we’ll create a new variable to identify whether the laureate was in the US when they won their prize. "
+"0","nobel_living<-nobel_living %>%"
+"0","  mutate (country_us = if_else (country == 'USA', ""USA"", ""other""))"
+"0",""
+"0","# Next, we will limit our analysis to only the following categories: Physics, Medicine, Chemistry, and Economics."
+"0","nobel_living_science <- nobel_living %>%"
+"0","  filter(category %in% c(""Physics"", ""Medicine"", ""Chemistry"", ""Economics""))"
