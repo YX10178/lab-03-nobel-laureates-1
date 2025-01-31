@@ -3,7 +3,7 @@
     "path": "~/Desktop/datascience/lab-03-nobel-laureates/lab-03.Rmd",
     "project_path": "lab-03.Rmd",
     "type": "r_markdown",
-    "hash": "285884546",
+    "hash": "1674915671",
     "contents": "",
     "dirty": false,
     "created": 1738296116475.0,
@@ -12,15 +12,15 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "71,21",
-        "scrollLine": "65"
+        "cursorPosition": "84,18",
+        "scrollLine": "75"
     },
     "folds": "",
-    "lastKnownWriteTime": 1738300428,
+    "lastKnownWriteTime": 1738301578,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1738300428166,
+    "last_content_update": 1738301578887,
     "read_only": false,
     "read_only_alternatives": []
 }

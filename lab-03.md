@@ -79,7 +79,7 @@ ggplot (nobel_living_science, aes (x = country_us)) +
 ### Exercise 4
 
 ``` r
-#Create a new variable called born_country_us that has the value "USA" if the laureate is born in the US, and "Other" otherwise. 
+#Create a new variable called born_country_us that has the value "USA" if the laureate is born in the US, and "other" otherwise. 
 
 nobel_living_science<-nobel_living_science %>%
   mutate (born_country_us = if_else (born_country == 'USA', "USA", "other"))
@@ -104,3 +104,30 @@ ggplot (nobel_living_science, aes (x = country_us, fill = born_country_us)) +
 ```
 
 ### Exercise 6
+
+``` r
+#within the four categories 
+nobel_living_science %>%
+  filter(country_us == "USA" & born_country_us == "other") %>%
+  count(born_country) %>%
+  arrange(desc(n))  # Sort by descending count
+```
+
+    ## # A tibble: 21 × 2
+    ##    born_country       n
+    ##    <chr>          <int>
+    ##  1 Germany            7
+    ##  2 United Kingdom     7
+    ##  3 China              5
+    ##  4 Canada             4
+    ##  5 Japan              3
+    ##  6 Australia          2
+    ##  7 Israel             2
+    ##  8 Norway             2
+    ##  9 Austria            1
+    ## 10 Finland            1
+    ## # ℹ 11 more rows
+
+``` r
+#Germany is the most common 
+```

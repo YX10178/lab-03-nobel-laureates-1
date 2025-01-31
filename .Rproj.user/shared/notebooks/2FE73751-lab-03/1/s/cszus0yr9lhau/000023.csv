@@ -1,0 +1,7 @@
+"0","# in the whole dataset "
+"0",""
+"0","#within the four categories "
+"0","nobel_living_science %>%"
+"0","  filter(country_us == ""USA"" & born_country_us == ""other"") %>%"
+"0","  count(born_country) %>%"
+"0","  arrange(desc(n))  # Sort by descending count"
