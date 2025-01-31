@@ -1,0 +1,6 @@
+"0","nobel_living <- nobel %>%"
+"0","  filter(!is.na(country) & gender != ""org"" & is.na(died_date))"
+"0","cat(""Number of observations in nobel_living:"", nrow(nobel_living))"
+"1","Number of observations in nobel_living:"
+"1"," "
+"1","228"
