@@ -56,13 +56,22 @@ ggplot (nobel_living_science, aes (x = country_us)) +
 ```
 ### Exercise 4
 ```{r US-based-born in other countries}
+#Create a new variable called born_country_us that has the value "USA" if the laureate is born in the US, and "Other" otherwise. 
+
+nobel_living_science<-nobel_living_science %>%
+  mutate (born_country_us = if_else (born_country == 'USA', "USA", "other"))
+cat ("Number of winners in four categories born in the US", sum (nobel_living_science$born_country_us=="USA"))
 
 ```
 
 ### Exercise 5
 
 ```{r US-based-born in other countries2}
-
+ggplot (nobel_living_science, aes (x = country_us, fill = born_country_us)) +
+          facet_wrap(~category)+ # Facet by prize category
+          geom_bar()+
+          coord_flip() # Flip the coordinates to make the bars horizontal
+# Buzzfeed highlighted that many of the U.S.-based Nobel laureates in the sciences were born outside the U.S. based on this visualization, a large portion of laureates residing in the U.S. were born outside the U.S. 
 ```
 
 ### Exercise 6

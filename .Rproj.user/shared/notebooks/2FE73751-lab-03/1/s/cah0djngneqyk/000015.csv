@@ -1,0 +1,8 @@
+"0","#Create a new variable called born_country_us that has the value ""USA"" if the laureate is born in the US, and ""Other"" otherwise. "
+"0",""
+"0","nobel_living_science<-nobel_living_science %>%"
+"0","  mutate (born_country_us = if_else (born_country == 'USA', ""USA"", ""other""))"
+"0","cat (""Number of winners in four categories born in the US"", sum (nobel_living_science$born_country_us==""USA""))"
+"1","Number of winners in four categories born in the US"
+"1"," "
+"1","105"
